@@ -1,0 +1,59 @@
+<!doctype html>
+<html　lang="ja">
+<head>
+<meta charset="utf-8">
+<title>問題3</title>
+<style>
+	body{
+		background-color: hotpink;
+		text-align: center
+	}
+	
+	@media screen and (max-width:480px){
+		body{
+			background-color: crimson;
+		}
+		textarea{
+			width:90%;
+		}
+		input{
+			width:100%;
+			font-size: 24px;
+			border: 1px solid #000;
+			margin-top: 20px;
+			background-color: cornsilk;
+			
+		}
+	}
+	</style>
+</head>
+
+<body>
+<div>
+	<h1><p>問題3</p><p>A3!で主人公（あなた）は劇団員になんと呼ばれているでしょうか？</p></h1>
+	<img src="IMG_2231_s.jpg">
+	<div><a href="#" onclick="seikai()"><img src=>監督</a></div>
+	<div><a href="#" onclick="machigai()"><img src="">支配人</a></div>
+	<div><a href="#" onclick="osii()"><img src="">君</a></div>
+	
+</div>
+<script>
+	var hit = Number(localStorage.hit);
+	
+	function seikai(){
+		hit = hit+1;
+		localStorage.hit = hit;
+		location.href = "kekka.html"
+	}
+	function machigai(){
+		localStorage.hit = hit;
+		location.href = "kekka.html"
+	}
+	function osii(){
+		localStorage.hit = hit;
+		location.href = "kekka.html"
+	}
+	
+	</script>
+</body>
+</html>

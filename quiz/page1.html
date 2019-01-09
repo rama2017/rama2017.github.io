@@ -1,0 +1,61 @@
+<!doctype html>
+<html　lang="ja">
+<head>
+<meta charset="utf-8">
+<title>問題１</title>
+<style>
+	body{
+		background-color: hotpink;
+		text-align: center;
+	}
+	
+	@media screen and (max-width:480px){
+		body{
+			background-color: crimson;
+		}
+		textarea{
+			width:90%;
+		}
+		input{
+			width:100%;
+			font-size: 24px;
+			border: 1px solid #000;
+			margin-top: 20px;
+			background-color: cornsilk;
+			
+		}
+	}
+	</style>
+</head>
+
+<body>
+<div>
+	<h1><p>問題１</p><p>イケメン役者育成ゲームといえばなんでしょう？</p></h1>
+	
+	<div><a href="#" onclick="osii()"><img src="ansuta2.jpg">あんさんぶるスターズ！</a></div>
+	
+	<div><a href="#" onclick="machigai()"><img src="ainana2.jpg">アイドリッシュセブン</a></div>
+	
+	<div><a href="#" onclick="seikai()"><img src="A3!３.jpg">A３！</a></div>
+	
+</div>
+<script>
+	var hit=0;
+	
+	function seikai(){
+		hit = hit+1;
+		localStorage.hit = hit;
+		location.href = "page2.html"
+	}
+	function machigai(){
+		localStorage.hit = hit;
+		location.href = "page2.html"
+	}
+	function osii(){
+		localStorage.hit = hit;
+		location.href = "page2.html"
+	}
+	
+	</script>
+</body>
+</html>

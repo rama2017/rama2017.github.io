@@ -1,0 +1,43 @@
+<!doctype html>
+<html　lang="ja">
+<head>
+<meta charset="utf-8">
+<title>結果発表</title>
+<style>
+	body{
+		background-color: hotpink;
+	}
+	
+	@media screen and (max-width:480px){
+		body{
+			background-color: crimson;
+		}
+		textarea{
+			width:90%;
+		}
+		input{
+			width:100%;
+			font-size: 24px;
+			border: 1px solid #000;
+			margin-top: 20px;
+			background-color: cornsilk;
+			
+		}
+	}
+	</style>
+</head>
+
+<body>
+<div id="kekka">
+	<h1>ドキドキの結果発表</h1>
+	
+	<div id="result"></div>
+</div>
+<div><a href="javascript:init();">もう一度ゲームを行う</a></div>
+<script>
+	var result = document.getElementById("result");
+	var hit = localStorage.hit;
+	result.innerHTML="あなたが正解した数は"+hit+"個です"
+	</script>
+</body>
+</html>

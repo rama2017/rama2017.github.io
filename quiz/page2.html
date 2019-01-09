@@ -1,0 +1,61 @@
+<!doctype html>
+<html　lang="ja">
+<head>
+<meta charset="utf-8">
+<title>問題２</title>
+<style>
+	body{
+		background-color: hotpink;
+		text-align: center;
+	}
+	
+	@media screen and (max-width:480px){
+		body{
+			background-color: crimson;
+		}
+		textarea{
+			width:90%;
+		}
+		input{
+			width:100%;
+			font-size: 24px;
+			border: 1px solid #000;
+			margin-top: 20px;
+			background-color: cornsilk;
+			
+		}
+	}
+	</style>
+</head>
+
+<body>
+<div>
+	<h1><p>問題２</p><p>A3!は４つのチームに分かれていますが、</p><p>何をモチーフにチーム名が付けられているでしょうか？</p></h1>
+	
+	<div><a href="#" onclick="machigai()"><img src="14daa608198e820204015179e69872a5_t.jpeg">花</a></div>
+	
+	<div><a href="#" onclick="seikai()"><img src="index.jpg">季節</a></div>
+	
+	<div><a href="#" onclick="osii()"><img src="s005_901.jpg">国</a></div>
+	
+</div>
+<script>
+	var hit = Number(localStorage.hit);
+	
+	function seikai(){
+		hit = hit+1;
+		localStorage.hit = hit;
+		location.href = "page3.html"
+	}
+	function machigai(){
+		localStorage.hit = hit;
+		location.href = "page3.html"
+	}
+	function osii(){
+		localStorage.hit = hit;
+		location.href = "page3.html"
+	}
+	
+	</script>
+</body>
+</html>

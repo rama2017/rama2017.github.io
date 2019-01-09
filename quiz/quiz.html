@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>クイズゲーム</title>
+	<script>
+	//問題の設定
+	var q = [];
+	q[0] =["イケメン役者育成ゲームといえば？","あんさんぶるスターズ","アイドリッシュセブン","A3!",3];
+	q[1] =["A3!は４つのチームに分かれていますが、何をモチーフに名前が付けられているでしょうか？","花","季節",
+	"国",2];
+	q[2] =["","Mozilla","Google","The World Wide Web Consortium",
+	3];
+
+	var count = 0;
+	var hit = 0;
+
+var init=function(){
+count=0;
+hit=0;
+
+document.getElementById('gamePlay').style = "display:block";
+document.getElementById('gameEnd').style = "display:none";
+
+question(count);
+}
+
+var question =function(num){
+	var mondai = document.getElementById('mondai');
+	var sentaku = document.getElementById('sentaku');
+
+	while (sentaku.firstChild) {
+		sentaku.removeChild(sentaku.firstChild);
+	}
+
+	mondai.textContent = q[num][0];	 
+
+	for(i=1;i<=3;i++){
+		toi1 = document.createElement('li');
+		toi1.innerHTML += '<a href="javascript:answer('+i+')">'+q[num][i]+'</a>';
+		sentaku.appendChild(toi1);
+	}
+}
+
+var answer = function(num) {
+
+	if (num == q[count][4]) {
+		hit++;
+	}
+//回答数
+count++;
+
+	if(count == q.length){
+		endScene();
+	}else{
+		question(count);
+	}
+
+}
+
+endScene = function(){
+document.getElementById('gamePlay').style = "display:none";
+document.getElementById('gameEnd').style = "display:block";
+
+document.getElementById('score').textContent = "正解率:"+Math.floor(hit/q.length*100)+"%";
+document.getElementById('outline').textContent = q.length+"問中、正解は "+hit+"問でした";
+
+detail =document.getElementById('detail');
+}
+
+//これで実行
+window.addEventListener('load',init);
+</script>
+</head>
+<body>
+<div id="gamePlay">
+	<h1>クイズ</h1>
+	<div id="mondai"></div>
+	<div id="kaito">
+	<ul id="sentaku"></ul>
+	</div>
+</div>
+
+<div id="gameEnd">
+	<h1>結果発表</h1>
+	<div id="score"></div>
+	<div id="outline"></div>
+	<div id="detail"></div>
+	<div><a href="javascript:init();">もう一度ゲームを行う</a></div>
+</div>
+
+</body>
+</html>
